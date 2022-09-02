@@ -1,0 +1,15 @@
+{% extends "base_bootstrap.html" %}
+{% block content %}
+<meta name="dj4e" content="475fe344558ed5c6e41b4bf1f330bc49">
+<h1>Delete Comment</h1>
+
+<p>Are you sure you want to delete</p>
+<p>{{ comment.text }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit"  class="btn btn-primary" value="Yes, delete.">
+  <a href="{% url 'ads:ad_detail' comment.ad.id %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
+Footer
